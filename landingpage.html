@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>college memories</title>
+    <style>
+        body {
+            background: url("https://cdn.glitch.global/02f7fe55-1b3a-4e22-a2eb-e26cc6fd2fb6/WhatsApp%20Image%202024-05-04%20at%2009.33.10_c5f763a2.jpg?v=1714795927435") center/cover no-repeat;
+            background-size: cover;
+            height: 115vh; /* Set height to viewport height */
+            display: flex;
+            justify-content: center; /* Center horizontally */
+            align-items: center; /* Center vertically */
+        }
+
+        .buttons {
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            justify-content: center;
+            margin-top: 60vh;
+        }
+
+        .Students,
+        .Employee {
+            padding: 8px 15px;
+            color: #fff;
+            border: none;
+            border-radius: 15px;
+            cursor: pointer;
+            transition: background-color 0.2s;
+            font-size: 16px;
+            height: 50px;
+            margin-right: 15px; /* Add margin between buttons */
+        }
+
+        .Students {
+            background-color: orange;
+            background-image: linear-gradient(to bottom right, orange, rgb(238, 217, 184));
+        }
+
+        .Employee {
+            background-color: rgb(75, 3, 63);
+            background-image: linear-gradient(to bottom right, rgb(147, 7, 107), rgb(240, 126, 212));
+        }
+    </style>
+</head>
+<body>
+    <div class="buttons">
+        <button class="Students" onclick="Students()">Students</button>
+        <button class="Employee" onclick="Employee()">Employee</button>
+    </div>
+
+    <script type="text/javascript">
+        function Students() {
+            location.href = "login.html";
+        }
+
+        function Employee() {
+            location.href = "employee.html";
+        }
+    </script>
+</body>
+</html>

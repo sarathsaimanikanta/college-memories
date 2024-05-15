@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {
+            background: rgba(255, 255, 255, 0.1) url("https://cdn.glitch.global/02f7fe55-1b3a-4e22-a2eb-e26cc6fd2fb6/244-2445261_shri-vishnu-engineering-college-for-women-vishnu-educational.png?v=1714766124714") center/cover no-repeat;
+            background-size: 1100px ;
+        }
+        .container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+        }
+        .Box {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            width: 30vh;
+            border: 1px solid black;
+            border-radius: 10px;
+            background-color: rgb(75, 3, 63);
+            background-image: linear-gradient(to bottom right, rgb(147, 7, 107), rgb(240, 126, 212));
+            padding: 20px;
+            position: relative;
+        }
+        .login-text {
+            margin-bottom: 10px;
+        }
+        .line {
+            width: 100%;
+            height: 1px;
+            background-color: black;
+            position: absolute;
+            top: 40%;
+            transform: translateY(-190%);
+        }
+        .login-components {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="Box">
+            <div class="login-text">
+                <h2>Employee Login:</h2>
+            </div>
+            <div class="line"></div>
+            <div class="login-components">
+                <input type="text" id="input" placeholder="Enter username"><br><br>
+                <!-- Modified Next button to redirect to password.html -->
+                <button onclick="next()">Next</button><br>
+            </div>
+        </div>
+    </div>
+    <script>
+        // Function to redirect to password.html when Next button is clicked
+        function next() {
+            window.location.href = "password1.html";
+        }
+    </script>
+</body>
+</html>

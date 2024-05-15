@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>college memories</title>
+    <style>
+    @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap');
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.logo{
+    width: 20%;
+    height: 70px;
+    padding-left: 5%;
+    padding-right: 5%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.header{
+    width: 100%;
+    height: 70px;
+    background-color: #f1efef;
+    padding-left: 5%;
+    padding-right: 5%;
+    display: flex;
+    justify-content: space-between;
+}
+
+.search{
+    width: 30%;
+    height: 70px;
+   /* background-color: blue;*/
+    display: flex;
+    align-items: center;
+    justify-content: center;
+} 
+
+.logo-img{
+    height: 100%;
+}
+
+.search-bar{
+    width: 80%;
+    height: 40px;
+    background-color: #fff;
+    display: flex;
+    align-items: center;
+    column-gap: 25px;
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+.search-box{
+    width: 80%;
+    height: 40px;
+    font-size: 18px;
+    text-indent: 20px;
+    border: none;
+    outline: none;
+    
+}
+
+.search-icon{
+    height: 20px;
+}
+
+.movies{
+    width: 100%;
+    padding: 50px 5%;
+    background-color: lightgray;
+    display: flex;
+    flex-wrap: wrap;
+    column-gap: 12%;
+    row-gap: 25px;
+}
+
+.movie{
+    width: 25%;
+    height: 400px;
+   /* background-color: red;*/
+    overflow: hidden;
+    border-radius: 10px;
+    position: relative;
+}
+ 
+.poster{
+    width: 100%;
+    height: 400px;
+}
+
+.overlay{
+    width: 100%;
+    height: 100%;
+    background-color: #000;
+    position: absolute;
+    opacity: 0;
+    transition: .3s;
+    cursor: pointer;
+}
+
+.overlay:hover{
+    opacity: 1;
+}
+
+.video{
+    width: 100%;
+    height: 50%;
+    /*background-color: yellow*/;
+}
+
+.details{
+    width: 100%;
+    height: 50%;
+    /*background-color: blue;*/
+    color: white;
+    font-family:'Poppins','sans-serif';
+    padding: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    flex-direction: column;
+    row-gap: 15px;
+}
+</style>
+</head>
+<body>
+    <header class="header">
+
+        <div class="logo">
+
+            <img class="logo-img" src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEh05SZJrtNMhkx16S9yJuhS2HaVn1GGhj_i1zC7JN6y9Xq-IYQ70zBYFGcsSIq2ox3Eo9l5Bf5lnuC_xD0hEccEriK9wlryfo7uMSR2bQsMGhDltzjlIOZCkDt6I2zDg26J8D-ufdrGcNw/s1600/v3078.png" alt="vishnu-logo">
+
+        </div>
+
+        <div class="search">
+
+            <div class="search-bar">
+                <input type="text" onkeyup="searchMovie()" class="search-box" placeholder="Search year" id="search">
+                <img onclick="searchMovie()" class="search-icon" src="https://icons.veryicon.com/png/o/commerce-shopping/small-icons-with-highlights/search-260.png" alt="search-icon">
+            </div>
+
+        </div>
+
+    </header>
+
+    <section class="movies" id="movies">
+        
+       
+
+</section>
+    <script>
+        let movies = [
+    {
+        name:"freshers",
+        poster:"https://cdn.glitch.global/02f7fe55-1b3a-4e22-a2eb-e26cc6fd2fb6/WhatsApp%20Image%202024-05-03%20at%2016.13.35_d4872f0b.jpg?v=1714760537238",
+        year:2019,
+        events:"freshers",
+        video:"https://youtu.be/6iCJ7FlkaB8?si=cZkkiKxwetAReUQZ"
+    },
+
+
+
+    {
+        name:"fest",
+        poster:"https://cdn.glitch.global/02f7fe55-1b3a-4e22-a2eb-e26cc6fd2fb6/WhatsApp%20Image%202024-05-03%20at%2016.13.35_4c204bd2.jpg?v=1714760522395",
+        year:2019,
+        events:"freshers,fest,farewells,annual day",
+        video:"https://youtu.be/6iCJ7FlkaB8?si=cZkkiKxwetAReUQZ"
+    },
+
+
+
+    {
+        name:"farewell ",
+        poster:"https://cdn.glitch.global/02f7fe55-1b3a-4e22-a2eb-e26cc6fd2fb6/WhatsApp%20Image%202024-05-03%20at%2016.13.35_232bb7e6.jpg?v=1714760530206",
+        year:2019,
+        events:"freshers,fest,farewells,annual day",
+        video:"https://youtu.be/6iCJ7FlkaB8?si=cZkkiKxwetAReUQZ"
+    },
+
+
+
+    {
+        name:"annual day",
+        poster:"https://cdn.glitch.global/02f7fe55-1b3a-4e22-a2eb-e26cc6fd2fb6/WhatsApp%20Image%202024-05-03%20at%2016.13.36_1c9b476a.jpg?v=1714760542893",
+        year:2019,
+        events:"freshers,fest,farewells,annual day",
+        video:"https://youtu.be/6iCJ7FlkaB8?si=cZkkiKxwetAReUQZ"
+    },
+
+
+
+    {
+        name:"ethnic day",
+        poster:"https://cdn.glitch.global/02f7fe55-1b3a-4e22-a2eb-e26cc6fd2fb6/WhatsApp%20Image%202024-05-03%20at%2016.13.36_8da70442.jpg?v=1714760546457",
+        year:2019,
+        events:"freshers,fest,farewells,annual day",
+        video:"https://youtu.be/6iCJ7FlkaB8?si=cZkkiKxwetAReUQZ"
+    },
+   
+
+]
+
+
+
+
+function searchMovie(){
+    const movieName = document.getElementById("search").value;
+    //console.log(movieName);
+    if(movieName!==""){
+        let result = movies.filter(function(movie){
+            return movie.name.toUpperCase().includes(movieName.toUpperCase())
+        })
+
+        displayMovies(result);
+    }
+    else{
+        displayMovies(movies);
+    }
+}
+
+function displayMovies(data){
+    /*let movie = document.createElement("div");
+    movie.classList.add("movie");
+
+
+    let overlay = document.createElement("div");
+    overlay.classList.add("overlay");
+
+    movie.appendChild(overlay);
+
+    console.log(movie);*/
+
+    let htmlString = ``;
+
+    for(let i=0;i<data.length;i++){
+        htmlString = htmlString+`
+        <div class="movie">
+        <div class="overlay">
+            <div class="video"></div>
+            <div class="details">
+            <video width="320" height="140" controls>
+            <source src="${data[i].video}" type="video/mp4">
+          </video>
+                <h1>${data[i].name}</h1>
+                <h2>${data[i].year}</h2>
+                <p>${data[i].events}</p>
+                <button><a href="home1.html"#>Open</a></button>
+            </div>
+        </div>
+        <img class="poster" src="${data[i].poster}">
+    </div>
+    `;
+    }
+
+    //console.log(htmlString);
+
+    document.getElementById("movies").innerHTML =htmlString;
+}
+
+displayMovies(movies)
+    </script>
+</body>
+</html>
